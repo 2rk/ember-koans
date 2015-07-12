@@ -1,6 +1,6 @@
-# Koens
+# Koans
 
-Ember Koens will teach you about EmberJS through the compleation of tests.
+Ember Koans will teach you about EmberJS through the compleation of tests.
 
 Follow the steps below to run the app.
 

@@ -1,7 +1,7 @@
 {
-  "name": "koens",
+  "name": "koans",
   "version": "0.0.0",
-  "description": "Small description for koens goes here",
+  "description": "Small description for koans goes here",
   "private": true,
   "directories": {
     "doc": "doc",

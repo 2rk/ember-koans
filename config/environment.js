@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'koens',
+    modulePrefix: 'koans',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
