@@ -1,7 +1,8 @@
 # Koens
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Ember Koens will teach you about EmberJS through the compleation of tests.
+
+Follow the steps below to run the app.
 
 ## Prerequisites
 
@@ -23,7 +24,8 @@ You will need the following things properly installed on your computer.
 ## Running / Development
 
 * `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* Visit your app at [http://localhost:4200](http://localhost:4200) to start learning Ember JS
+* Open this project folder in your code editor, starting with `tests/0_intro-test.js`
 
 ### Code Generators
 
@@ -33,15 +35,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember test`
 * `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
