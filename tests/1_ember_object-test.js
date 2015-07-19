@@ -1,4 +1,4 @@
-import { _ } from '../helpers/blank';
+import { _ } from './helpers/blank';
 import Ember from 'ember';
 import { module, test } from 'qunit';
 
@@ -6,7 +6,7 @@ import { module, test } from 'qunit';
 // http://localhost:7357/tests/index.html?module=Intro&nojshint
 // to run just this file.
 let count = 0, Animal, beast, cat;
-module('Ember Object', {
+module('Koans | 1 | Ember Object', {
   beforeEach: function() {
     count = 0;
     Animal = Ember.Object.extend({
