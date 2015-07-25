@@ -1,9 +1,8 @@
 import { _ } from './helpers/blank';
 import { module, test } from 'qunit';
 
-// Run `ember test --server` then visit:
-// http://localhost:7357/tests/index.html?module=Intro&nojshint
-// to run just this file.
+// Run `ember serve` then visit:
+// http://localhost:4200
 module("Koans | 0 | Asserts");
 
 test('Our First Test', function(assert) {

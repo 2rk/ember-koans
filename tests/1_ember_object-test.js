@@ -2,9 +2,6 @@ import { _ } from './helpers/blank';
 import Ember from 'ember';
 import { module, test } from 'qunit';
 
-// Run `ember test --server` then visit:
-// http://localhost:7357/tests/index.html?module=Intro&nojshint
-// to run just this file.
 let count = 0, Animal, beast, cat;
 module('Koans | 1 | Ember Object', {
   beforeEach: function() {
