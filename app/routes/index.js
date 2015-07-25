@@ -5,6 +5,7 @@ export default Ember.Route.extend({
     return [
       {name: "About Asserts", module: "Koans | 0 | Asserts", file: '0_intro-test.js'},
       {name: "About Ember Object", module: "Koans | 1 | Ember Object", file: '1_ember_object-test.js'},
+      {name: "About Computed Properties", module: "Koans | ? | Ember Computed", file: "_computed_prop-test.js"}
     ];
   }
 });
