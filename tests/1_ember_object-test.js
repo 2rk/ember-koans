@@ -16,6 +16,7 @@ module('Koans | 1 | Ember Object', {
     beast = Animal.create();
     cat = Animal.create({
       type: 'cat',
+      meowCount: 2,
     });
   }
 });
@@ -94,4 +95,27 @@ test('Ember protects against forgetting to use `set`', function(assert) {
     cat.type = 'kitten';
   });
   assert.equal(cat.get('type'), _);
+});
+
+test('Increment numeric values with incrementProperty', function(assert) {
+  cat.incrementProperty('meowCount');
+  assert.equal(cat.get('meowCount'), _, 'The meows steadily increase');
+
+  cat.incrementProperty('meowCount', 5);
+  assert.equal(cat.get('meowCount'), _, "It's dinner time!");
+
+  cat.incrementProperty('scratchCount');
+  assert.equal(cat.get('scratchCount'), _, `The food was insufficient.
+    You can increment a property with no value, it will start as 0`);
+
+});
+
+test('Decrement numeric values with decrementProperty', function (assert) {
+  cat.decrementProperty('meowCount');
+  assert.equal(cat.get('meowCount'), _, 'Kitten likes scratches');
+
+  cat.decrementProperty('meowCount', 3);
+  assert.equal(cat.get('meowCount'), _, `Good food! You've earned credit.
+    Values can go into the negative`);
+
 });

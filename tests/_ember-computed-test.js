@@ -31,19 +31,57 @@ skip('computed.oneWay is a read-only alias', function(assert) {
   // This makes `oneWay` a good method for dynamic default values
 });
 
+const FireFighter = Ember.Object.extend({
+  name: "Super",
+  brave: true,
+  command: false,
+  allProps: Ember.computed.and('brave', 'command'),
+  anyProps: Ember.computed.or('brave', 'command')
+});
+
 skip('computed.and will logical `and` properties', function(assert) {
-  const trooper = Ember.Object.extend({
-    first: true,
-    second: false,
-    conOne: Ember.computed.and('first', 'second')
+  const fireFighter = FireFighter.create();
+  assert.equal(fireFighter.get('allProps'), _, 'false and true');
+  fireFighter.set('command', true);
+  assert.equal(fireFighter.get('allProps'), _, 'true and true');
+  fireFighter.set('command', 'FIRE!');
+  assert.equal(fireFighter.get('allProps'), _, 'will return the last truthy value');
+  fireFighter.set('command', 0);
+  assert.equal(fireFighter.get('allProp'), _, 'will return false if any are falsey');
+});
+
+// computed.any is deprecated in favour of computed.or Removed in 2.0
+
+/*
+ collect defaultTo deprecatingAlias empty equal filter filterBy filterProperty gt gte intersect lt lte map mapBy mapProperty match max min none not notEmpty
+*/
+
+skip('computed.bool converts truthy and falsey values to `true` and `false`', function(assert) {
+  const fireFighter = FireFighter.extend({
+    hasName: Ember.computed.bool('name'),
+    tools: [],
+    hasTools: Ember.computed.bool('tools.length')
   }).create();
-  assert.equal(trooper.get('conOne'), _, 'false and true');
-  trooper.set('second', true);
-  assert.equal(trooper.get('conOne'), _, 'true and true');
-  trooper.set('second', 'FINE!');
-  assert.equal(trooper.get('conOne'), _, 'Not just for booleans');
+
+  assert.equal(fireFighter.get('hasName'), _, "Strings are truthy");
+  assert.equal(fireFighter.get('hasTools'), _, "zero is falsy");
+
+  fireFighter.set('tools', ["hose", "ladder"]);
+  assert.equal(fireFighter.get('hasTools'), _, "other numbers are truthy");
+});
+
+test('', function() {
+
+});
+
+skip('computed.or will logical `or` properties', function(assert) {
+  const fireFighter = FireFighter.create();
+  assert.equal(fireFighter.get('anyProps'), _, 'true or false');
+  // Truthy and falsey values behave as `computed.and`
+  fireFighter.set('first', false);
+  assert.equal(fireFighter.get('anyProps'), _, 'false or false');
 });
 
 /*
-any bool collect defaultTo deprecatingAlias empty equal filter filterBy filterProperty gt gte intersect lt lte map mapBy mapProperty match max min none not notEmpty or readOnly reads setDiff sort sum union uniq
+readOnly reads setDiff sort sum union uniq
 */

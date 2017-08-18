@@ -13,7 +13,7 @@ test('Better Messages', function(assert) {
   assert.ok(false, 'Should be true: Please fix it');
 });
 
-test('Test Equality', function(assert) {
+test('All things being equal - Testing Equality', function(assert) {
   const expectedValue = _;
   const actualValue = 1 + 1;
   assert.ok(actualValue === expectedValue);
